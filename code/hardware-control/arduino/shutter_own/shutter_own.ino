@@ -31,13 +31,13 @@ void loop() {
   if(Serial.available()){
    state = Serial.read(); // we read the desired state of the shutter from Python
    Serial.println(state);
-   if (state == 48){
+   if (state == 0){
     angle = 180;
     myServo.write(angle);
     delay(1);
 
     }
-    else if(state == 49){
+    else if(state == 1){
       angle = 0;
       myServo.write(angle);
       delay(1);

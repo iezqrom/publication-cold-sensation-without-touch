@@ -1,5 +1,5 @@
 # %%
-from cv2 import edgePreservingFilter
+from globals import path_data, path_figures
 from tharnal import grabManyvideos, ReAnRaw
 import matplotlib.pyplot as plt
 from scipy import stats
@@ -13,7 +13,6 @@ def multiply_by_10(x):
         return int(x * 10)
     else:
         return x
-
 
 # %%
 pad_size = 20
@@ -75,8 +74,7 @@ def analyse_ROI(data, change_point, r = 20):
 
 
 # %%
-path_data = "../../data"
-path_figures = "../../figures/"
+
 folder_name = f"appendixA"
 lut_distances = [3.5, 4, 4.5, 5, 5.5, 6]
 dict_lut_distances = {}
