@@ -1,26 +1,3 @@
-# A novel method to selectively elicit cold sensations without touch
-[Version in Biorxiv](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v1)
-[Data repository]()
+This code was written at the beginning of my PhD. The quality of the code is very low. Standard coding practices to maximise readibility and compatibility were not followed. Therefore, the code won't run straight away. This code is published for transparency and archival purposes. If you want to use any of the Python code in this repository, I encourage you to contact me first.
 
-:warning: Code will be available once the paper has been accepted for publication
-
-## Highlights
-TBD
-
-## Abstract
-TBD
-
-## Authors:
-- Ivan Ezquerra-Romano
-- Maansib Chowdhury
-- Caterina Maria Leone
-- Gian Domenico Iannetti
-- Patrick Haggard
-
-**Keywords:** TBD
-
-
-### Environment
-- Device: MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)
-- Operating system: macOS Monterey Version 12.4
-- Programming languages: Python 3.8.6 & Arduino 1.8.19
+Some functions and classes imported in the Python code here can be found in the following [repository](https://github.com/iezqrom/ier-phd-tools).
