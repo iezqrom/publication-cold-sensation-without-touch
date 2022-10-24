@@ -10,7 +10,7 @@ TBD
 ## Abstract
 TBD
 
-## Authors :man_scientist: :woman_scientist:
+## Authors:
 - Ivan Ezquerra-Romano
 - Maansib Chowdhury
 - Caterina Maria Leone
@@ -21,6 +21,6 @@ TBD
 
 
 ### Environment
-- Devices: MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports) & Arduino Uno
+- Device: MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)
 - Operating system: macOS Monterey Version 12.4
 - Programming languages: Python 3.8.6 & Arduino 1.8.19

@@ -1,21 +1,3 @@
- /*
-Pin    |  Interrrupt # | Arduino Platform
----------------------------------------
-2      |  0            |  All -But it is INT1 on the Leonardo
-3      |  1            |  All -But it is INT0 on the Leonardo
-18     |  5            |  Arduino Mega Only
-19     |  4            |  Arduino Mega Only
-20     |  3            |  Arduino Mega Only
-21     |  2            |  Arduino Mega Only
-0      |  0            |  Leonardo
-1      |  3            |  Leonardo
-7      |  4            |  Leonardo
-The Arduino Due has no standard interrupt pins as an iterrupt can be attached to almosty any pin. 
-
-In the program pin 2 is chosen
-*/
-// IN THIS CODE WE DIM UP THE LIGHT, WE CAN CONTROL THE RATE OF CHANGE BY CHANGING THE DELAY IN THE LOOP
-
 int AC_LOAD = 3;    // Output to Opto Triac pin
 int dimming = 128;  // Dimming level (0-128)  0 = ON, 128 = OFF
 int state;
