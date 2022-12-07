@@ -1,5 +1,4 @@
 # %%
-from turtle import color
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -32,22 +31,38 @@ for name_file in name_files:
     data[name_file]['shifted_traces'] = []
 
     # plot each iteration in a different plot
-    if len(data[name_file]['data'].means) >600:
-        cut_end = -248
+    if len(data[name_file]['data'].means) > 600:
+        cut_end = -298
         y_dat = data[name_file]['data'].means[:cut_end]
     else:
         cut_end = -2
-    ax.plot(np.arange(len(data[name_file]['data'].means[:cut_end])), data[name_file]['data'].means[:cut_end], color=colour_blue)
+    ax.plot(np.arange(len(data[name_file]['data'].means[:cut_end])), data[name_file]['data'].means[:cut_end], color=colour_blue, lw=lwD * 1.2)
     print(len(data[name_file]['data'].means[:cut_end]))
 
+ax.set_xlim([0, 530])
+ax.set_yticks(np.arange(24, 34.01, 2))
 
-# ax2 = ax.twinx()
-# ax2.plot(transformed_axis_cm, lw=lwD * 1.2, color="k")
-# ax.set_zorder(ax2.get_zorder() + 1)
+name_file = "scenario2_mainexample"
+cloA = shu_temp(f"{path_data}/examples/{name_file}")
+cloA.getParaPID()
+
+steps_mm = 0.00049609375
+zaber_offset = 302362 - np.max(cloA.zaber_pos)
+max_list_cm = (zaber_offset * steps_mm + 40) / 10
+
+transformed_zabers_axis = [np.max(cloA.zaber_pos) - pos for pos in cloA.zaber_pos]
+transformed_axis_mm = [tza * steps_mm for tza in transformed_zabers_axis]
+
+transformed_axis_cm = [tam / 10 + max_list_cm for tam in transformed_axis_mm]
+
+ax2 = ax.twinx()
+ax2.plot(transformed_axis_cm, lw=lwD * 1.2, color="k")
+ax.set_zorder(ax2.get_zorder() + 1)
+
 ax.patch.set_visible(False)
-ax2.set_ylim([6, 20])
-ax2.set_yticks(np.arange(6, 20.01, 2))
-framesToseconds(ax, 4, y_dat, int)  # np.max(self.objs_mean_temp))
+ax2.set_ylim([0, 20])
+ax2.set_yticks(np.arange(0, 20.01, 5))
+framesToseconds(ax, 5, y_dat, int)  # np.max(self.objs_mean_temp))
 ax.spines["top"].set_visible(False)
 ax2.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
@@ -74,27 +89,14 @@ for spine in ax2.spines.values():
 
 ax.set_ylabel("Temperature ($^\circ$C)", labelpad=20, color="#658DC6")
 ax.set_xlabel("Time (s)", labelpad=20)
-ax2.set_ylabel("Distance needle - skin (cm)", labelpad=20)
+ax2.set_ylabel("Distance nozzle - skin (cm)", labelpad=20)
 ax2.set_zorder(1)
 plt.tight_layout()
 
-plt.savefig(f'{path_figures}/figure1/panelC_scenario2_without_examplerobot.png', transparent=True)
+plt.savefig(f'{path_figures}/figure1/panelC_scenario2_with_examplerobot.png', transparent=True)
 
 
 # %% PID
-name_file = "scenario2_mainexample"
-cloA = shu_temp(f"{path_data}/examples/{name_file}")
-cloA.getParaPID()
-
-steps_mm = 0.00049609375
-zaber_offset = 302362 - np.max(cloA.zaber_pos)
-max_list_cm = (zaber_offset * steps_mm + 40) / 10
-
-transformed_zabers_axis = [np.max(cloA.zaber_pos) - pos for pos in cloA.zaber_pos]
-transformed_axis_mm = [tza * steps_mm for tza in transformed_zabers_axis]
-
-transformed_axis_cm = [tam / 10 + max_list_cm for tam in transformed_axis_mm]
-
 start = 0
 end = 532
 
@@ -118,10 +120,12 @@ fill_shade[idx_shu] = 34
 
 ax.fill_between(np.arange(len(y_dat)), fill_shade, y2=0, color="k", alpha=0.25)
 
+# secondar y axis
+ax2 = ax.twinx()
+ax2.plot(transformed_axis_cm, lw=lwD * 1.2, color="k")
+ax2.set_yticks(np.arange(0, 20, 5))
 
-
-
-framesToseconds(ax, 4, y_dat, int)  # np.max(self.objs_mean_temp))
+framesToseconds(ax, 5, y_dat, int)  # np.max(self.objs_mean_temp))
 ax.spines["top"].set_visible(False)
 ax2.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
@@ -151,8 +155,6 @@ ax.set_xlabel("Time (s)", labelpad=20)
 ax2.set_ylabel("Distance needle - skin (cm)", labelpad=20)
 ax2.set_zorder(1)
 plt.tight_layout()
-
-plt.savefig(f'{path_figures}/figure1/panelC_scenario2.png', transparent=True)
 
 
 # %%

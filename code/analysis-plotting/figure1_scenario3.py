@@ -33,18 +33,26 @@ for name_file in name_files:
 
 # %%
 
-data['example1']['traces_start_end'] = [(247, 281)]
-data['example2']['traces_start_end'] = []
-data['example3']['traces_start_end'] = [(91, 125)]
+data['example1']['traces_start_end'] = [(94, 128)]
+data['example2']['traces_start_end'] = [(98, 132)]
+data['example3']['traces_start_end'] = [(169, 203)]
 data['example4']['traces_start_end'] = []
-data['example5']['traces_start_end'] = [(72, 106), (150, 184), (227, 261)]
+data['example5']['traces_start_end'] = [(72, 106), (150, 184)]
 
 for example in name_files:
     data[example]['traces'] = []
     for start_end in data[example]['traces_start_end']:
-        ax.axvspan(start_end[0], start_end[1], alpha=0.5, color='red')
-        print(start_end[1] - start_end[0])
-        data[example]['traces'].append(data[example]['data'].means[start_end[0]:start_end[1]])
+        start = start_end[0] - 4
+        end = start_end[1] + 5
+        fig, ax = plt.subplots(1, 1, figsize=(20, 10))
+        ax.plot(data[example]['data'].means[start:end], lw=lwD)
+        
+        # ax.axvspan(start, start_end[1], alpha=0.5, color='red')
+        # vertical lines
+        ax.axvline(9, color='k', linestyle='--')
+        ax.axvline(11, color='k', linestyle='--')
+        print(end - start)
+        data[example]['traces'].append(data[example]['data'].means[start:end])
 
     data[example]['traces'] = np.array(data[example]['traces'])
 
@@ -67,8 +75,8 @@ for index, trace in enumerate(all_traces):
 
 all_shifted_traces = np.array(all_shifted_traces)
 # plot all traces
-fig, ax = plt.subplots(1, 1, figsize=(20, 10))
-ax.plot(all_shifted_traces.T, color = colour_blue)
+fig, ax = plt.subplots(1, 1, figsize=(17, 10))
+ax.plot(all_shifted_traces.T, color = colour_blue, lw=4, alpha = 0.6)
 # plot mean
 ax.plot(np.mean(all_shifted_traces, axis = 0), color = colour_blue,  lw=lwD * 1.2,)
 
@@ -80,7 +88,7 @@ ax.set_ylim([25, 34])
 ax.set_yticks(np.arange(24, 34.01, 2))
 
 fill_shade = np.zeros(len(all_shifted_traces[0, :]))
-fill_shade[5:31] = 34
+fill_shade[9:34] = 34
 
 ax.fill_between(np.arange(len(all_shifted_traces[0, :])), fill_shade, y2=0, color="k", alpha=0.25)
 
@@ -111,16 +119,20 @@ plt.savefig(f'{path_figures}/figure1/panelD_scenario3.png', transparent = True)
 
 
 # %% plot all slopes
-all_slopes = []
+all_slopes_diff = []
+all_slopes_degrees_diff = []
+start = 9
+end = start + 2
 for trace in all_shifted_traces:
-    all_slopes.append(np.mean(np.diff(trace[5:7])))
-    print((trace[7] - trace[6]) /0.1)
-print(all_slopes)
-print(len(all_slopes))
+    all_slopes_diff.append(np.mean(np.diff(trace[start:end])))
+    temp_degrees_change = (trace[end] - trace[start]) / ((end-start)/10)
+    all_slopes_degrees_diff.append(temp_degrees_change)
+    
+print(all_slopes_degrees_diff)
 
-print(np.mean(all_slopes))
-print(np.std(all_slopes))
+print('mean: ', abs(round(np.mean(all_slopes_degrees_diff))))
+print('sd: ', round(np.std(all_slopes_degrees_diff)))
 
 
 
-# %%
+ # %%
