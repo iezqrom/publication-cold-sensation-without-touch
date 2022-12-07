@@ -33,7 +33,7 @@ We report a non-contact cooling stimulator and accompanying control system. We u
 - Gian Domenico Iannetti
 - Patrick Haggard
 
-**Keywords:** Thermoception, Perception, Sensation, Temperature, Mechanosensation, Cold
+**Keywords:** :key: Thermoception, Perception, Sensation, Temperature, Mechanosensation, Cold
 
 
 ### Environment :computer::floppy_disk:
