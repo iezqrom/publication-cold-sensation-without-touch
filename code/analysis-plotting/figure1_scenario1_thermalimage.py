@@ -53,8 +53,8 @@ ax.spines["bottom"].set_linewidth(lwD)
 
 ax.set_xlabel("Time (s)", labelpad=20)
 ax.set_ylabel("Temperature ($^\circ$C)", labelpad=20)
-ax.yaxis.set_tick_params(width=lwD, length=lenD, color='grey')
-ax.xaxis.set_tick_params(width=lwD, length=lenD, color='grey')
+ax.yaxis.set_tick_params(width=lwD, length=lenD, color='lightgrey')
+ax.xaxis.set_tick_params(width=lwD, length=lenD, color='lightgrey')
 #change transparency of ticks
 for line in ax.xaxis.get_ticklines():
     line.set_alpha(alpha_frame)
@@ -63,7 +63,7 @@ for line in ax.yaxis.get_ticklines():
 
 # change colour and opacity of the spines
 for spine in ax.spines.values():
-    spine.set_edgecolor('grey')
+    spine.set_edgecolor('lightgrey')
     spine.set_alpha(alpha_frame)
 
 

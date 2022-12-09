@@ -3,7 +3,7 @@ from globals import path_data, path_figures
 from tharnal import grabManyvideos, ReAnRaw
 import matplotlib.pyplot as plt
 from scipy import stats
-from plotting import framesToseconds
+from plotting import framesToseconds, prettifySpinesTicks
 import matplotlib.patches as patches
 import numpy as np
 
@@ -190,6 +190,8 @@ ax.fill_between(
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
 
+prettifySpinesTicks(ax)
+
 # plt.tight_layout()
 plt.savefig(f"{path_figures}/{folder_name}/appendixA_drop_analysis.png", transparent=True, bbox_inches='tight')
 
@@ -241,6 +243,8 @@ ax.tick_params(axis="both", which="major", width=width_lines, length=length_tick
 # change pad ticks
 ax.tick_params(axis="x", pad=pad_size_ticks)
 ax.tick_params(axis="y", pad=pad_size_ticks)
+
+prettifySpinesTicks(ax)
 
 plt.savefig(f"{path_figures}/{folder_name}/appendixA_linear_regression.png", transparent=True, bbox_inches='tight')
 

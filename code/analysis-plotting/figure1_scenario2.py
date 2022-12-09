@@ -73,19 +73,19 @@ ax.yaxis.set_tick_params(width=lwD, length=lenD)
 ax.xaxis.set_tick_params(width=lwD, length=lenD)
 ax2.yaxis.set_tick_params(width=lwD, length=lenD)
 
-ax.tick_params(axis="y", which="major", pad=10, color='grey')
-ax.tick_params(axis="x", which="major", pad=10, color='grey')
-ax2.tick_params(axis="y", which="major", pad=10, color='grey')
+ax.tick_params(axis="y", which="major", pad=10, color='lightgrey')
+ax.tick_params(axis="x", which="major", pad=10, color='lightgrey')
+ax2.tick_params(axis="y", which="major", pad=10, color='lightgrey')
 
 ax.spines["left"].set_linewidth(lwD)
 ax.spines["bottom"].set_linewidth(lwD)
 ax2.spines["right"].set_linewidth(lwD)
 
 for spine in ax.spines.values():
-    spine.set_edgecolor('grey')
+    spine.set_edgecolor('lightgrey')
 
 for spine in ax2.spines.values():
-    spine.set_edgecolor('grey')
+    spine.set_edgecolor('lightgrey')
 
 ax.set_ylabel("Temperature ($^\circ$C)", labelpad=20, color="#658DC6")
 ax.set_xlabel("Time (s)", labelpad=20)
@@ -136,19 +136,19 @@ ax.yaxis.set_tick_params(width=lwD, length=lenD)
 ax.xaxis.set_tick_params(width=lwD, length=lenD)
 ax2.yaxis.set_tick_params(width=lwD, length=lenD)
 
-ax.tick_params(axis="y", which="major", pad=10, color='grey')
-ax.tick_params(axis="x", which="major", pad=10, color='grey')
-ax2.tick_params(axis="y", which="major", pad=10, color='grey')
+ax.tick_params(axis="y", which="major", pad=10, color='lightgrey')
+ax.tick_params(axis="x", which="major", pad=10, color='lightgrey')
+ax2.tick_params(axis="y", which="major", pad=10, color='lightgrey')
 
 ax.spines["left"].set_linewidth(lwD)
 ax.spines["bottom"].set_linewidth(lwD)
 ax2.spines["right"].set_linewidth(lwD)
 
 for spine in ax.spines.values():
-    spine.set_edgecolor('grey')
+    spine.set_edgecolor('lightgrey')
 
 for spine in ax2.spines.values():
-    spine.set_edgecolor('grey')
+    spine.set_edgecolor('lightgrey')
 
 ax.set_ylabel("Temperature ($^\circ$C)", labelpad=20, color="#658DC6")
 ax.set_xlabel("Time (s)", labelpad=20)

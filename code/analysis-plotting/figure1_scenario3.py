@@ -108,11 +108,11 @@ ax.spines["bottom"].set_linewidth(lwD)
 ax.set_ylabel("Temperature ($^\circ$C)", labelpad=20)
 ax.set_xlabel("Time (s)", labelpad=20)
 
-ax.tick_params(axis="y", which="major", pad=10, color='grey')
-ax.tick_params(axis="x", which="major", pad=10, color='grey')
+ax.tick_params(axis="y", which="major", pad=10, color='lightgrey')
+ax.tick_params(axis="x", which="major", pad=10, color='lightgrey')
 
 for spine in ax.spines.values():
-    spine.set_edgecolor('grey')
+    spine.set_edgecolor('lightgrey')
 
 plt.tight_layout()
 plt.savefig(f'{path_figures}/figure1/panelD_scenario3.png', transparent = True)

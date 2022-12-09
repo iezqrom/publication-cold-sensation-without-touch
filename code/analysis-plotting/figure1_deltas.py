@@ -136,11 +136,11 @@ plt.tick_params(bottom=False, labelbottom=False)
 
 # ax.axhline(0, 0, 8, linewidth=20, color='k', linestyle=':')
 
-ax.yaxis.set_tick_params(width=lwD, length=lenD, color='grey')
-ax.xaxis.set_tick_params(width=lwD, length=lenD, color='grey')
+ax.yaxis.set_tick_params(width=lwD, length=lenD, color='lightgrey')
+ax.xaxis.set_tick_params(width=lwD, length=lenD, color='lightgrey')
 
 for spine in ax.spines.values():
-    spine.set_edgecolor('grey')
+    spine.set_edgecolor('lightgrey')
 
 ax.spines["left"].set_linewidth(lwD)
 ax.spines["bottom"].set_linewidth(lwD)
