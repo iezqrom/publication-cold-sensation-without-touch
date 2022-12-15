@@ -1,10 +1,7 @@
 # A novel method to selectively elicit cold sensations without touch :snowflake::cold_face::call_me_hand:
 [Version in Journal of Methods Neuroscience](https://www.sciencedirect.com/science/article/pii/S0165027022002898)
 
-Versions in Biorxiv
-- [v1](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v1)
-- [v2](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v2)
-- [v3](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v3)
+Versions in Biorxiv: [v1](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v1), [v2](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v2) & [v3](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v3)
 
 [Data repository]()
 
