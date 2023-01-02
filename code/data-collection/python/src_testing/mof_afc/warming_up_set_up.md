@@ -1,5 +1,0 @@
-- Check syringe is clean
-- Check syringe is fixed, if not use pliers to move the metal bars and fix the syringe straight
-- Check room temperature and annotate
-- Start camera calibration script
-- When camera ready, crush dry ice
