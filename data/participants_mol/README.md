@@ -1,1 +1,1 @@
-Download data from [this repository]()
+Download data to reproduce Figure 1F from [this repository](https://osf.io/vhbmp)

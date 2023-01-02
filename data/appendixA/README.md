@@ -1,1 +1,1 @@
-Download data from [this repository]()
+Download data to reproduce figures in Appendix A from [this repository](https://osf.io/cjsut)

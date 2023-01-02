@@ -43,7 +43,7 @@ ax.set_xlim([0, 530])
 ax.set_yticks(np.arange(24, 34.01, 2))
 
 name_file = "scenario2_mainexample"
-cloA = shu_temp(f"{path_data}/examples/{name_file}")
+cloA = shu_temp(f"{path_data}/examples/scenario2_examples/{name_file}")
 cloA.getParaPID()
 
 steps_mm = 0.00049609375
