@@ -1,14 +1,11 @@
 # %%
-import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import norm
-import math
 from text import *
 import os
 from tharnal import *
 import random
-import scipy
+from plotting import colours
 
 mc = "black"
 plt.rcParams.update(
@@ -25,6 +22,8 @@ path_data = "../../data/participants_mol/"
 path_figures = "../../figures/"
 # list folders in path
 folders = os.listdir(path_data)
+# remove REAMDME
+folders.remove("README.md")
 # remove hidden files
 participant_folders = [f for f in folders if not f.startswith(".")]
 
@@ -121,9 +120,9 @@ s_bub = 350
 for dd in all_deltas:
     x_pos = random.uniform(0.95, 1.05)
     # print(x_pos)
-    ax.scatter(x_pos, -dd, s=s_bub, color=ultraviolet)
+    ax.scatter(x_pos, -dd, s=s_bub, color=colours['cold'])
 
-ax.plot([0.95, 1.05], [-delta_popu, -delta_popu], linewidth=lwD, color=driedmoss)
+ax.plot([0.95, 1.05], [-delta_popu, -delta_popu], linewidth=lwD, color=colours['cold'])
 
 ax.set_xlim(0.85, 1.15)
 ax.set_ylim(-2, 0)
@@ -154,4 +153,5 @@ ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
 
 plt.tight_layout()
-plt.savefig(f"{path_figures}/figure1/panelF_deltas.png", transparent=True)
+plt.savefig(f"{path_figures}/figure1/panelF_deltas.svg", transparent=True)
+# %%

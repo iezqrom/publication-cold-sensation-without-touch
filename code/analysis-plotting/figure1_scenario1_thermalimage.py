@@ -3,7 +3,7 @@ from globals import path_data, path_figures
 import numpy as np
 import matplotlib.pyplot as plt
 from tharnal import ReAnRaw
-from plotting import framesToseconds
+from plotting import framesToseconds, colours
 
 mc = "black"
 plt.rcParams.update(
@@ -32,7 +32,7 @@ lenD = 20
 s_bub = 150
 alpha_frame=1
 
-ax.plot(data, lw=10, color="#658DC6")
+ax.plot(data, lw=10, color=colours['cold'])
 
 steps = 1
 framesToseconds(ax, steps, data)

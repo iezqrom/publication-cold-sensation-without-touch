@@ -215,10 +215,12 @@ fig, ax = plt.subplots(figsize=(10, 10))
 slope, intercept, r_value, p_value, std_err = stats.linregress(lut_distances, end_means)
 # build line for plotting
 line = [slope * ld + intercept for ld in lut_distances]
+darkdark = "#28282D"
+dark = "#615c61"
 # plot
-ax.plot(lut_distances, line, linewidth=width_lines, color="#8AA3AF")
+ax.plot(lut_distances, line, linewidth=width_lines, color=darkdark)
 # plot end_means
-ax.scatter(lut_distances, end_means, s=200, color="#751C77", zorder = 10)
+ax.scatter(lut_distances, end_means, s=200, color=dark, zorder = 10)
 
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)

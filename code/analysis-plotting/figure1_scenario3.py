@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from plotting import plotParams, framesToseconds
+from plotting import plotParams, framesToseconds, colours
 from globals import path_data, path_figures, colour_blue
 from local_functions import shu_temp
 
@@ -76,9 +76,9 @@ for index, trace in enumerate(all_traces):
 all_shifted_traces = np.array(all_shifted_traces)
 # plot all traces
 fig, ax = plt.subplots(1, 1, figsize=(17, 10))
-ax.plot(all_shifted_traces.T, color = colour_blue, lw=4, alpha = 0.6)
+ax.plot(all_shifted_traces.T, color = colours['cold'], lw=4, alpha = 0.6)
 # plot mean
-ax.plot(np.mean(all_shifted_traces, axis = 0), color = colour_blue,  lw=lwD * 1.2,)
+ax.plot(np.mean(all_shifted_traces, axis = 0), color = colours['cold'],  lw=lwD * 1.2,)
 
 ax.set_yticks(np.arange(24, 34.01, 2))
 
@@ -115,7 +115,7 @@ for spine in ax.spines.values():
     spine.set_edgecolor('lightgrey')
 
 plt.tight_layout()
-plt.savefig(f'{path_figures}/figure1/panelD_scenario3.png', transparent = True)
+plt.savefig(f'{path_figures}/figure1/panelD_scenario3.svg', transparent = True)
 
 
 # %% plot all slopes

@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from plotting import plotParams, framesToseconds
+from plotting import plotParams, framesToseconds, colours
 from globals import path_data, path_figures, colour_blue
 from local_functions import shu_temp
 
@@ -36,7 +36,7 @@ for name_file in name_files:
         y_dat = data[name_file]['data'].means[:cut_end]
     else:
         cut_end = -2
-    ax.plot(np.arange(len(data[name_file]['data'].means[:cut_end])), data[name_file]['data'].means[:cut_end], color=colour_blue, lw=lwD * 1.2)
+    ax.plot(np.arange(len(data[name_file]['data'].means[:cut_end])), data[name_file]['data'].means[:cut_end], color=colours['cold'], lw=lwD * 1.2)
     print(len(data[name_file]['data'].means[:cut_end]))
 
 ax.set_xlim([0, 530])
@@ -93,7 +93,7 @@ ax2.set_ylabel("Distance nozzle - skin (cm)", labelpad=20)
 ax2.set_zorder(1)
 plt.tight_layout()
 
-plt.savefig(f'{path_figures}/figure1/panelC_scenario2_with_examplerobot.png', transparent=True)
+plt.savefig(f'{path_figures}/figure1/panelC_scenario2_with_examplerobot.svg', transparent=True)
 
 
 # %% PID
