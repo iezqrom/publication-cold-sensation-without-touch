@@ -3,10 +3,9 @@ from globals import path_data, path_figures
 from tharnal import grabManyvideos, ReAnRaw
 import matplotlib.pyplot as plt
 from scipy import stats
-from plotting import framesToseconds
+from plotting import framesToseconds, prettifySpinesTicks
 import matplotlib.patches as patches
 import numpy as np
-
 
 def multiply_by_10(x):
     if isinstance(x, float):
@@ -190,7 +189,7 @@ ax.fill_between(
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
 
-# plt.tight_layout()
+prettifySpinesTicks(ax, colour = 'grey')
 plt.savefig(f"{path_figures}/{folder_name}/appendixA_drop_analysis.png", transparent=True, bbox_inches='tight')
 
 # %%
@@ -214,9 +213,9 @@ slope, intercept, r_value, p_value, std_err = stats.linregress(lut_distances, en
 # build line for plotting
 line = [slope * ld + intercept for ld in lut_distances]
 # plot
-ax.plot(lut_distances, line, linewidth=width_lines, color="#8AA3AF")
+ax.plot(lut_distances, line, linewidth=width_lines, color="black")
 # plot end_means
-ax.scatter(lut_distances, end_means, s=200, color="#751C77", zorder = 10)
+ax.scatter(lut_distances, end_means, s=200, color="grey", zorder = 10)
 
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
@@ -241,6 +240,8 @@ ax.tick_params(axis="both", which="major", width=width_lines, length=length_tick
 # change pad ticks
 ax.tick_params(axis="x", pad=pad_size_ticks)
 ax.tick_params(axis="y", pad=pad_size_ticks)
+
+prettifySpinesTicks(ax, colour ='grey')
 
 plt.savefig(f"{path_figures}/{folder_name}/appendixA_linear_regression.png", transparent=True, bbox_inches='tight')
 
