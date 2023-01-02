@@ -1,7 +1,7 @@
 # A novel method to selectively elicit cold sensations without touch :snowflake::cold_face::call_me_hand:
 [Version in Journal of Methods Neuroscience](https://www.sciencedirect.com/science/article/pii/S0165027022002898)
 
-[Version in Biorxiv](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v1)
+Versions in Biorxiv: [v1](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v1), [v2](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v2) & [v3](https://www.biorxiv.org/content/10.1101/2022.06.14.496120v3)
 
 [Data repository]()
 
@@ -19,7 +19,7 @@ Thermal and tactile stimuli are transduced by different receptor classes. Howeve
 ### New Method
 We developed a non-tactile, focal, temperature-controlled, multi-purpose cooling stimulator. This method controls the exposure of a target skin region to a dry-ice source. Using a thermal camera to monitor skin temperature, and adjusting the source-skin distance accordingly, we could deliver non-tactile cooling stimuli with customisable profiles, for studying different aspects of cold sensation.
 
-### Results
+### Results
 To validate our method, we measured absolute and relative thresholds for cold sensation without mechanical contact in 13 human volunteer participants, using the method of limits. We found that the absolute cold detection threshold was 32.71 oC ± 0.88 oC. This corresponded to a threshold relative to each participant’s baseline skin temperature of -1.08 oC ± 0.37 oC.
 
 ### Comparisons with Existing Method
